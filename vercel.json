@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/index.ts"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.ts"
+      "src": "api/index.ts",
+      "use": "vercel-bun"
     }
   ],
   "headers": [
