@@ -1,8 +1,9 @@
-const server = Bun.serve({
+const serverConfig = {
     port: process.env.PORT ?? 3001,
-    async fetch(req){
-      return new Response("Servicio corriendo");  
+    async fetch(req: Request) {
+      return new Response("Servicio corriendo con Bun Nativo");  
     }
-});
+};
 
-console.log(`server funcionando en el puerto: ${server.port}`);
+// Esto es para que funcione en Vercel
+export default serverConfig;
