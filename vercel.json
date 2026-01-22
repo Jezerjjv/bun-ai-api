@@ -6,15 +6,19 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "index.ts"
+      "src": "/api/(.*)",
+      "dest": "index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.ts"
     }
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Credentials",
