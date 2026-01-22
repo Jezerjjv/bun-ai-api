@@ -7,6 +7,9 @@ app.get('/api/test', (req, res) => {
   res.json({ mensaje: "API Express funcionando en Vercel" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Servidor local en http://localhost:${PORT}`);
+  });
+}
+export default app;
